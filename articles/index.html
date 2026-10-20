@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>記事｜なんか訳してみる</title><style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:#26343a;background:#f7fbfa;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
+.site-header{position:sticky;top:0;z-index:10;background:rgba(247,251,250,.92);backdrop-filter:blur(12px);border-bottom:1px solid #d4e4e2}
+.header-inner{max-width:1120px;margin:auto;padding:18px 28px;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;flex-direction:column}
+.brand-main{font-family:"Yu Mincho","Hiragino Mincho ProN","BIZ UDPMincho",serif;font-weight:600;font-size:20px;letter-spacing:.06em}
+.brand-sub{font-size:10px;color:#718188;letter-spacing:.12em}
+nav{display:flex;gap:28px;font-size:13px;color:#5f7076}
+nav a:hover{color:#386d74}
+.hero{position:relative;overflow:hidden;min-height:650px;display:flex;align-items:center;background:linear-gradient(135deg,#f8fcfb 0%,#eaf5f3 100%);border-bottom:1px solid #d4e4e2}
+.hero-inner{position:relative;z-index:2;width:min(1120px,100%);margin:auto;padding:90px 28px}
+.eyebrow,.section-label{margin:0 0 16px;color:#4e8990;font-size:11px;font-weight:700;letter-spacing:.18em}
+h1,h2,h3{font-family:"Yu Mincho","Hiragino Mincho ProN","BIZ UDPMincho",serif;font-weight:500;line-height:1.5}
+h1{font-size:clamp(42px,6vw,76px);letter-spacing:.03em;margin:0 0 28px}
+h1 em{font-style:normal;color:#4e8990}
+.hero-lead{font-size:16px;color:#596a70;line-height:2.15}
+.scroll-link{display:inline-flex;gap:14px;align-items:center;margin-top:40px;padding-bottom:6px;border-bottom:1px solid #4e8990;font-size:13px;color:#386d74}
+.scroll-link span{font-size:18px}
+.hero-deco{position:absolute;border:1px solid rgba(78,137,144,.18);border-radius:50%}
+.hero-deco-one{width:440px;height:440px;right:-120px;top:80px}
+.hero-deco-two{width:270px;height:270px;right:30px;top:165px}
+.intro{padding:110px 28px;background:#fff}
+.narrow{max-width:760px;margin:auto}
+.intro h2{font-size:clamp(28px,4vw,42px);margin:0 0 24px}
+.intro p:not(.section-label){color:#64747a}
+.articles{max-width:1000px;margin:auto;padding:110px 28px}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}
+.section-head h2{font-size:36px;margin:0}
+.article-date{font-size:12px;color:#849398}
+.article-card{background:#fff;border:1px solid #d4e4e2;border-radius:4px;padding:clamp(28px,5vw,64px);box-shadow:0 14px 40px rgba(42,72,76,.06);position:relative}
+.article-card:before{content:"";position:absolute;left:0;top:28px;bottom:28px;width:3px;background:#4e8990}
+.article-card-top{display:flex;justify-content:space-between;align-items:center}
+.tag{font-size:11px;color:#4e8990;background:#eaf5f3;padding:5px 10px;border-radius:20px}
+.article-no{font-family:"Yu Mincho","Hiragino Mincho ProN","BIZ UDPMincho",serif;color:#a0adb0;font-size:13px}
+.article-card h3{font-size:clamp(28px,4vw,40px);margin:26px 0 42px}
+.article-body{max-width:700px;margin:auto;font-family:"Yu Mincho","Hiragino Mincho ProN","BIZ UDPMincho",serif;font-size:15px}
+.article-body p{margin:0 0 2em}
+.article-body strong{font-weight:600}
+blockquote{margin:42px 0;padding:25px 30px;border-left:2px solid #4e8990;background:#f7fbfa;color:#386d74;font-size:17px}
+.about{background:#eaf5f3;border-top:1px solid #d4e4e2;padding:100px 28px}
+.about-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1.3fr;gap:90px}
+.about h2{font-size:38px;margin:0}
+.about-copy{padding-top:4px}
+.about-copy .lead{font-family:"Yu Mincho","Hiragino Mincho ProN","BIZ UDPMincho",serif;font-size:21px;color:#386d74;line-height:1.8}
+.about-copy p{color:#5f7076}
+footer{text-align:center;padding:55px 20px;background:#26343a;color:#eaf5f3}
+footer p{font-family:"Yu Mincho","Hiragino Mincho ProN","BIZ UDPMincho",serif;margin:0 0 8px}
+footer small{font-size:10px;letter-spacing:.1em;color:#aebdc0}
+@media(max-width:700px){
+ .header-inner{padding:15px 18px}
+ nav{gap:15px;font-size:11px}
+ .brand-main{font-size:17px}
+ .brand-sub{display:none}
+ .hero{min-height:590px}
+ .hero-inner{padding:70px 22px}
+ h1{font-size:43px}
+ .intro,.articles,.about{padding-left:20px;padding-right:20px}
+ .section-head{align-items:start}
+ .section-head h2{font-size:30px}
+ .about-grid{grid-template-columns:1fr;gap:35px}
+ .article-card{padding:30px 24px}
+ .article-card:before{top:20px;bottom:20px}
+ .article-body{font-size:14px}
+}
+/* Multi-page blog additions */
+.site-header .brand:hover{opacity:.82}
+.article-list{max-width:1000px;margin:auto;padding:100px 28px 120px}
+.article-list-grid{display:grid;gap:18px}
+.article-link{display:block;background:#fff;border:1px solid #d4e4e2;padding:28px 32px;transition:.2s ease}
+.article-link:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(42,72,76,.08);border-color:#a9cfcc}
+.article-link-meta{display:flex;justify-content:space-between;color:#849398;font-size:11px;margin-bottom:10px}
+.article-link h3{font-size:24px;margin:0 0 8px}
+.article-link p{margin:0;color:#718188;font-size:13px}
+.back-link{display:inline-block;margin-bottom:25px;color:#386d74;font-size:13px;border-bottom:1px solid #9fc4c1}
+.page-title{max-width:1000px;margin:auto;padding:85px 28px 20px}
+.page-title h1{font-size:clamp(34px,5vw,56px);margin:0}
+.article-page{padding-top:20px}
+@media(max-width:700px){
+ .article-list,.page-title{padding-left:20px;padding-right:20px}
+ .article-link{padding:24px}
+}
+
+</style></head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="../index.html"><span class="brand-main">なんか訳してみる</span><span class="brand-sub">英語の物語を、自分なりに。</span></a>
+<nav><a href="index.html">記事</a><a href="../index.html#about">このブログについて</a></nav>
+</div></header>
+<main>
+<section class="page-title"><p class="section-label">ARTICLES</p><h1>記事</h1></section>
+<section class="article-list"><div class="article-list-grid">
+<a class="article-link" href="001.html"><div class="article-link-meta"><span>はじめまして</span><span>2026.09</span></div><h3>「なんか訳してみる」やってみる</h3><p>このブログを始める理由と、これからやっていきたいこと。</p></a>
+<!-- 新しい記事は、このカードを複製して追加できます。 -->
+</div></section>
+</main>
+<footer><p>分からないなりに、なんかやってみます。</p><small>© 2026 なんか訳してみる / Louis</small></footer>
+</body></html>
